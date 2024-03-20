@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Supermarket')
+@section('title', 'XYZ Supermarket')
 
 @section('body')
 

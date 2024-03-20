@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Producto;
 use App\Models\Usuario;
+use App\Models\Proveedor;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -32,5 +33,14 @@ class DatabaseSeeder extends Seeder
         $usuario->save();
 
         Usuario::factory(50)->create();
+
+        $proveedor = new Proveedor();
+
+        $proveedor->nombre_proveedor = 'Colombina';
+        $proveedor->email_proveedor = 'colombina@gmail.com';
+        $proveedor->direccion_proveedor='Cra12';
+        $proveedor->telefono_proveedor='313161827';
+
+        $proveedor->save();
     }
 }
