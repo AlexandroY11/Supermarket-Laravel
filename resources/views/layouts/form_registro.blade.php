@@ -15,8 +15,17 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="container">
-            @yield('body')
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 login">
+                    <header>
+                        <a href="{{route('home')}}">
+                            <span>Regresar a Inicio</span>
+                        </a>
+                    </header>
+                    @yield('body')
+                </div>
+            </div>
         </div>
     </div>
 
