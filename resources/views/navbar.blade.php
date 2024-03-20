@@ -17,6 +17,19 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="{{ route('categorias') }}">Categorías</a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="{{ route('sobre_nosotros') }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sobre Nosotros
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('quienes_somos') }}">¿Quiénes Somos?</a></li>
+                        <li><a class="dropdown-item" href="{{ route('pqrs') }}">PQRS</a></li>
+                        <li><a class="dropdown-item" href="{{ route('contactanos') }}">Contáctanos</a></li>
+                        <li><a class="dropdown-item" href="{{ route('preguntas_frecuentes') }}">Preguntas Frecuentes</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{{ route('politica_datos') }}">Pólitica tratamiento de datos</a></li>
+                    </ul>
+                </li>
             </ul>
             <div class="d-flex">
                 <a class="btn btn-primary me-2" href="{{ route('registro') }}">Registrarse</a>
