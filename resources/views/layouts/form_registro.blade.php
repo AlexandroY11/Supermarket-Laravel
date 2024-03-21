@@ -10,6 +10,7 @@
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
     <link rel="prefetch" href="{{ asset('assets/img/icon.png') }}">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-p3f2cJw8t/OxQu5Ez42jf+qObABkmXzeTPBrS3W16L+GPw3q29adIU3ymjUY4DOBDGtNcnALeDyCKUHqlQ7b4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>@yield('title')</title>
 </head>

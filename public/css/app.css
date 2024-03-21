@@ -6,14 +6,28 @@
 
 
 
+
+
+
 .footer {
-    padding: 20px 0;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
+    padding: 50px 0;
+    background-color: #343a40;
+    color: #fff;
 }
 
-.footer span {
-    display: block; 
-    margin-bottom: 10px; 
+.footer h5 {
+    color: #fff;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }
