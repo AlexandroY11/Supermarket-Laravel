@@ -35,4 +35,9 @@ class AboutController extends Controller
     {
         return view('sobre_nosotros.preguntas_frecuentes');
     }
+    
+    public function terminosCondiciones()
+    {
+        return view('sobre_nosotros.terminos_condiciones');
+    }
 }

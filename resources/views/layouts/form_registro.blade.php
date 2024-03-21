@@ -10,7 +10,8 @@
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
     <link rel="prefetch" href="{{ asset('assets/img/icon.png') }}">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-p3f2cJw8t/OxQu5Ez42jf+qObABkmXzeTPBrS3W16L+GPw3q29adIU3ymjUY4DOBDGtNcnALeDyCKUHqlQ7b4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
     <title>@yield('title')</title>
 </head>
@@ -20,9 +21,11 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 login">
                     <header>
-                        <a href="{{route('home')}}">
-                            <span>Regresar a Inicio</span>
+                        <a href="{{ route('home') }}" style="text-decoration: none; display: flex; align-items: center; font-size:16px;">
+                            <i class="fas fa-chevron-left"></i>
+                            <span style="margin-left: 5px;">Regresar a Inicio</span>
                         </a>
+                        
                     </header>
                     @yield('body')
                 </div>

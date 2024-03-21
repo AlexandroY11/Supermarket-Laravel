@@ -12,10 +12,10 @@
                     <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('productos') }}">Productos</a>
+                    <a class="nav-link active" href="{{ route('productos.index') }}">Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('categorias') }}">Categorías</a>
+                    <a class="nav-link active" href="{{ route('categorias.index') }}">Categorías</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="{{ route('sobre_nosotros') }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,6 +28,7 @@
                         <li><a class="dropdown-item" href="{{ route('preguntas_frecuentes') }}">Preguntas Frecuentes</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{{ route('politica_datos') }}">Pólitica tratamiento de datos</a></li>
+                        <li><a class="dropdown-item" href="{{ route('terminos_condiciones') }}">Términos y Condiciones</a></li>
                     </ul>
                 </li>
             </ul>

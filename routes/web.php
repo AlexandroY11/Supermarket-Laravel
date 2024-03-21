@@ -11,7 +11,7 @@ Route::get('/', HomeController::class, 'index')->name('home');
 
 //Grupo de routes
 Route::controller(ProductController::class)->group(function(){
-    Route::get('/productos','index')->name('productos');
+    Route::get('/productos','index')->name('productos.index');
     Route::get('productos/crear','create');
     Route::get('productos/{id}','show');
 });
@@ -23,7 +23,7 @@ Route::controller(UsuarioController::class)->group((function(){
 
 
 Route::controller(CategoryController::class)->group(function(){
-    Route::get('/categorias', 'index')->name('categorias');
+    Route::get('/categorias', 'index')->name('categorias.index');
 });
 
 Route::controller(AboutController::class)->group(function(){
@@ -33,5 +33,6 @@ Route::controller(AboutController::class)->group(function(){
     Route::get('/sobre_nosotros/politica_datos', 'politicaDatos')->name('politica_datos');
     Route::get('/sobre_nosotros/contactanos', 'contactanos')->name('contactanos');
     Route::get('/sobre_nosotros/preguntas_frecuentes', 'preguntasFrecuentes')->name('preguntas_frecuentes');
+    Route::get('/sobre_nosotros/terminos_condiciones', 'terminosCondiciones')->name('terminos_condiciones');
 
 });
