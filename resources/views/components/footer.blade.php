@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
-                <img src="{{ asset('assets/img/icon.png') }}" alt="Logo de HomeColor" class="img-fluid" style="max-height: 250px; height:100%;">
+                <img src="{{ asset('assets/img/logo.png') }}" alt="Logo de HomeColor" class="img-fluid" style="max-height: 250px; height:100%;">
             </div>
             
             <div class="col-md-4">

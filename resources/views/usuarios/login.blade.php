@@ -6,7 +6,7 @@
 
 <form method="post" action="">
     <div class="mb-3 d-flex align-items-center">
-        <img src="{{ asset('assets/img/icon.png') }}" alt="XYZ Supermarket" class="img-fluid me-3" style="max-height: 100px;">
+        <img src="{{ asset('assets/img/logo.png') }}" alt="XYZ Supermarket" class="img-fluid me-3" style="max-height: 100px;">
         <span class="h2">Iniciar Sesión</span>
     </div>
     

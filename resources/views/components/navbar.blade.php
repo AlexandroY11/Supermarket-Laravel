@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3" style="max-height:100px; height:100%;">
     <div class="container">
         <a href="{{ route('home') }}">
-            <img src="{{ asset('assets/img/icon.png') }}" alt="Supermarket Icon" style="max-height: 75px;" />
+            <img src="{{ asset('assets/img/logo.png') }}" alt="Supermarket Icon" style="max-height: 75px;" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
