@@ -6,7 +6,7 @@
 
 <form method="post" action="">
     <div class="mb-3 d-flex align-items-center">
-        <img src="{{ asset('assets/img/logo.png') }}" alt="XYZ Supermarket" class="img-fluid me-3" style="max-height: 100px;">
+        <img src="{{ asset('assets/img/logo.png') }}" alt="Homecolor" class="img-fluid me-3" style="max-height: 100px;">
         <span class="h2">Crear Cuenta</span>
     </div>
     
@@ -50,11 +50,11 @@
         <label class="form-check-label" for="terminos">Acepto los <a href="{{ route('terminos_condiciones') }}" target="_blank">términos y condiciones</a></label>
     </div>
     <div class="mb-3">
-        <button type="submit" class="btn btn-custom w-100">Registrarse</button>
+        <button type="submit" class="btn btn-principal w-100">Registrarse</button>
     </div>
     <div class="mb-3 d-flex justify-content-between align-items-center">
         <span>¿Ya tienes una cuenta?</span>
-        <a href="{{ route('login') }}" class="btn btn-warning">Iniciar sesión</a>
+        <a href="{{ route('login') }}" class="btn btn-secundario">Iniciar sesión</a>
     </div>
 </form>
         

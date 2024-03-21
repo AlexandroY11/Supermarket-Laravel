@@ -12,13 +12,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     {{-- Estilos personalizados --}}
+    <link href="{{ asset('css/components.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <title>@yield('title')</title>
+    <title>Homecolor || @yield('title')</title>
 </head>
 <body>
     @include('components.navbar')
-    <div class="container-fluid">
+    <div class="container-fluid" id="div-principal">
         <div class="container">
             @yield('body')
         </div>
@@ -52,20 +53,6 @@
     {{-- Scripts al final del cuerpo del documento --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     {{-- JavaScript personalizado para el botón de WhatsApp --}}
-    <script>
-        window.addEventListener('scroll', function() {
-            var whatsappButton = document.getElementById('whatsapp-button');
-            if (window.scrollY > 100) {
-                whatsappButton.style.display = 'none';
-            } else {
-                whatsappButton.style.display = 'block';
-            }
-        });
 
-        // Redes sociales - Botones
-        
-
-
-    </script>
 </body>
 </html>
