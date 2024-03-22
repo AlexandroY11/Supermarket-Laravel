@@ -18,7 +18,9 @@ class ProductoFactory extends Factory
     {
         return [
             'nombre_producto' => implode(' ', $this->faker->words(rand(1, 2))), 
-            'categoria' => $this->faker->randomElement(['Lacteos', 'Granos', 'Confitería', 'Carnes', 'Embutidos']), 
+            'categoria' => $this->faker->randomElement(['Edredones', 'Sabanas', 'Colchas', 'Cortinas', 'Toallas']), 
+            'descripcion_producto' => $this->faker->sentence(10),
+            'medida_producto' => $this->faker->randomElement(['King', 'Queen', 'Doble', 'Semidoble']),
             'precio' => $this->faker->randomFloat(0, 1000, 50000),
             'stock' => $this->faker->randomNumber(2)
         ];

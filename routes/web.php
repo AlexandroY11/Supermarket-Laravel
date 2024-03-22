@@ -12,8 +12,11 @@ Route::get('/', HomeController::class, 'index')->name('home');
 //Grupo de routes
 Route::controller(ProductController::class)->group(function(){
     Route::get('/productos','index')->name('productos.index');
-    Route::get('productos/crear','create');
-    Route::get('productos/{id}','show');
+    Route::get('productos/crear','create')->name('productos.create');
+    Route::post('productos','store')->name('productos.store');
+    Route::get('productos/{id}','show')->name('productos.show');
+    Route::get('productos/{producto}/edit','edit')->name('productos.edit');
+    Route::put('productos/{producto}','update')->name('productos.update');
 });
 
 Route::controller(UsuarioController::class)->group((function(){
