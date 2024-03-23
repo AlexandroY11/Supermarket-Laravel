@@ -28,6 +28,10 @@ Route::controller(UsuarioController::class)->group((function(){
 
 Route::controller(CategoryController::class)->group(function(){
     Route::get('/categorias', 'index')->name('categorias.index');
+    Route::get('categorias/crear','create')->name('categorias.create');
+    Route::get('/categorias/{id}', 'show')->name('categorias.show');
+    Route::post('categorias','store')->name('categorias.store');
+
 });
 
 Route::controller(AboutController::class)->group(function(){
