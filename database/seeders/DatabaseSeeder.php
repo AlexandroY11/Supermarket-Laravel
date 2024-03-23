@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Categoria;
 use App\Models\Producto;
 use App\Models\Usuario;
 use App\Models\Proveedor;
@@ -23,6 +24,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         Producto::factory(50)->create();
+        Categoria::factory(50)->create();
 
         $usuario = new Usuario();
 

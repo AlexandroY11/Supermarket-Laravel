@@ -54,7 +54,7 @@
     </div>
     <div class="mb-3 d-flex justify-content-between align-items-center">
         <span>¿Ya tienes una cuenta?</span>
-        <a href="{{ route('login') }}" class="btn btn-secundario">Iniciar sesión</a>
+        <a href="{{ route('usuarios.login') }}" class="btn btn-secundario">Iniciar sesión</a>
     </div>
 </form>
         

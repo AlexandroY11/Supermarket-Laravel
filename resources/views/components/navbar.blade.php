@@ -34,7 +34,7 @@
                 </li>
             </ul>
             <div class="d-flex">
-                <a class="btn btn-principal" href="{{ route('login') }}">Iniciar Sesión</a>
+                <a class="btn btn-principal" href="{{ route('usuarios.login') }}">Iniciar Sesión</a>
             </div>            
         </div>
     </div>

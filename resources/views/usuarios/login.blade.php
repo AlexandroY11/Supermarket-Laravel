@@ -29,7 +29,7 @@
     </div>
     <div class="mb-3 d-flex justify-content-between align-items-center">
         <span>¿Necesita una cuenta?</span>
-        <a href="{{ route('registro') }}" class="btn btn-secundario">Crear Cuenta</a>
+        <a href="{{ route('usuarios.registro') }}" class="btn btn-secundario">Crear Cuenta</a>
     </div>
 </form>
         

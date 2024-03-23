@@ -21,8 +21,8 @@ Route::controller(ProductController::class)->group(function(){
 });
 
 Route::controller(UsuarioController::class)->group((function(){
-    Route::get('/login','login')->name('login');
-    Route::get('/registro','registro')->name('registro');
+    Route::get('/login','login')->name('usuarios.login');
+    Route::get('/registro','registro')->name('usuarios.registro');
 }));
 
 
