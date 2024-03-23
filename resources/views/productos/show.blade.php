@@ -12,8 +12,17 @@
 
     <h1>Producto {{$producto->nombre_producto}}</h1>
     <div class="row">
-        <a class="btn btn-principal mb-4 w-25" href="{{route('productos.edit', $producto->id)}}">Editar Producto</a>
+        <a class="btn btn-principal mb-4 me-3 w-25" href="{{route('productos.edit', $producto->id)}}">Editar Producto</a>
+        <form action="{{route('productos.destroy', $producto->id)}}" method="POST">
+
+            @method('delete')
+
+            @csrf
+
+            <button type="submit" class="btn btn-danger mb-4 w-25">Eliminar Producto</button>
+        </form>
     </div>
+    
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
             <div class="card h-100">

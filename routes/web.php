@@ -17,6 +17,7 @@ Route::controller(ProductController::class)->group(function(){
     Route::get('productos/{id}','show')->name('productos.show');
     Route::get('productos/{producto}/edit','edit')->name('productos.edit');
     Route::put('productos/{producto}','update')->name('productos.update');
+    Route::delete('productos/{producto}', 'destroy')->name('productos.destroy');
 });
 
 Route::controller(UsuarioController::class)->group((function(){

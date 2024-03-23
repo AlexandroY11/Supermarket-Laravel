@@ -82,4 +82,12 @@ class ProductController extends Controller
 
         return redirect()->route('productos.show', $producto);
     }
+
+    public function destroy(Producto $producto){
+        // return $producto;
+
+        $producto->delete();
+
+        return redirect()->route('productos.index');
+    }
 }
