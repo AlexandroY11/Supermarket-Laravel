@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RequestProducto;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 
@@ -18,32 +19,24 @@ class ProductController extends Controller
         return view('productos.create');
     }
     
-    public function store(Request $request){
-
-        $request->validate([
-            'nombre_producto' => 'required|min:3',
-            'descripcion_producto' => 'required',
-            'categoria' => 'required',
-            'medida_producto' => 'required',
-            'precio' => 'required|min:6',
-            'stock' => 'required',
-        ]);
-
+    public function store(RequestProducto $request){
         
-        $producto = new Producto();
+        // $producto = new Producto();
 
-        $producto->nombre_producto = $request->nombre_producto;
-        $producto->categoria = $request->categoria;
-        $producto->descripcion_producto = $request->descripcion_producto;
-        $producto->medida_producto = $request->medida_producto;
-        $producto->precio = $request->precio;
-        $producto->stock = $request->stock;
+        // $producto->nombre_producto = $request->nombre_producto;
+        // $producto->categoria = $request->categoria;
+        // $producto->descripcion_producto = $request->descripcion_producto;
+        // $producto->medida_producto = $request->medida_producto;
+        // $producto->precio = $request->precio;
+        // $producto->stock = $request->stock;
 
-        $producto->save();
+        // $producto->save();
+
+        $producto = Producto::create($request->all());
 
         return redirect()->route('productos.show', $producto->id);
 
-    }
+    } 
 
     public function show($id){
 
@@ -58,7 +51,7 @@ class ProductController extends Controller
         return view('productos.edit', compact('producto'));
     }
 
-    public function update(Request $request, Producto $producto){
+    public function update(RequestProducto $request, Producto $producto){
         
         $request->validate([
             'nombre_producto' => 'required|min:3',
@@ -71,14 +64,16 @@ class ProductController extends Controller
 
         // return $request->all();
 
-        $producto->nombre_producto = $request->nombre_producto;
-        $producto->categoria = $request->categoria;
-        $producto->descripcion_producto = $request->descripcion_producto;
-        $producto->medida_producto = $request->medida_producto;
-        $producto->precio = $request->precio;
-        $producto->stock = $request->stock;
+        // $producto->nombre_producto = $request->nombre_producto;
+        // $producto->categoria = $request->categoria;
+        // $producto->descripcion_producto = $request->descripcion_producto;
+        // $producto->medida_producto = $request->medida_producto;
+        // $producto->precio = $request->precio;
+        // $producto->stock = $request->stock;
 
-        $producto->save();
+        // $producto->save();
+
+        $producto->update($request->all());
 
         return redirect()->route('productos.show', $producto);
     }
