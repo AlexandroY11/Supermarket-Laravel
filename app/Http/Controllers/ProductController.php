@@ -38,9 +38,7 @@ class ProductController extends Controller
 
     } 
 
-    public function show($id){
-
-        $producto = Producto::find($id);
+    public function show(Producto $producto) {
 
         // return view('productos.show', ['id' => $id]);
         return view('productos.show', compact('producto'));
@@ -51,10 +49,11 @@ class ProductController extends Controller
         return view('productos.edit', compact('producto'));
     }
 
-    public function update(RequestProducto $request, Producto $producto){
+    public function update(Request $request, Producto $producto){
         
         $request->validate([
             'nombre_producto' => 'required|min:3',
+            'slug' => 'required|unique:productos,slug,' . $producto->id,
             'descripcion_producto' => 'required',
             'categoria' => 'required',
             'medida_producto' => 'required',

@@ -13,7 +13,7 @@
             <div class="col">
                 <div class="card h-100">
                     <div class="card-body">
-                        <a href="{{route('productos.show', $producto->id)}}">
+                        <a href="{{route('productos.show', $producto)}}">
                             <h5 class="card-title">{{ $producto->nombre_producto }}</h5>
                         </a>
                         <p class="card-text">{{ $producto->descripcion_producto }}</p>

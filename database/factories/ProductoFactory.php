@@ -18,6 +18,7 @@ class ProductoFactory extends Factory
     {
         return [
             'nombre_producto' => implode(' ', $this->faker->words(rand(1, 2))), 
+            'slug' => $this->faker->slug(),
             'categoria' => $this->faker->randomElement(['Edredones', 'Sabanas', 'Colchas', 'Cortinas', 'Toallas']), 
             'descripcion_producto' => $this->faker->sentence(10),
             'medida_producto' => $this->faker->randomElement(['King', 'Queen', 'Doble', 'Semidoble']),

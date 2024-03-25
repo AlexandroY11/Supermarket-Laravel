@@ -10,27 +10,29 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Inicio</a>
+                    <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('productos.index') }}">Productos</a>
+                    <a class="nav-link {{ request()->routeIs('productos.*') ? 'active' : '' }}" href="{{ route('productos.index') }}">Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('categorias.index') }}">Categorías</a>
+                    <a class="nav-link {{ request()->routeIs('categorias.*') ? 'active' : '' }} " href="{{ route('categorias.index') }}">Categorías</a>
                 </li>
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Sobre Nosotros
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{ route('quienes_somos') }}">¿Quiénes Somos?</a></li>
-                        <li><a class="dropdown-item" href="{{ route('pqrs') }}">PQRS</a></li>
-                        <li><a class="dropdown-item" href="{{ route('contactanos') }}">Contáctanos</a></li>
-                        <li><a class="dropdown-item" href="{{ route('preguntas_frecuentes') }}">Preguntas Frecuentes</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('quienes_somos') ? 'active' : '' }}" href="{{ route('quienes_somos') }}">¿Quiénes Somos?</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('pqrs') ? 'active' : '' }}" href="{{ route('pqrs') }}">PQRS</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('contactanos') ? 'active' : '' }}" href="{{ route('contactanos') }}">Contáctanos</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('preguntas_frecuentes') ? 'active' : '' }}" href="{{ route('preguntas_frecuentes') }}">Preguntas Frecuentes</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{{ route('politica_datos') }}">Pólitica tratamiento de datos</a></li>
-                        <li><a class="dropdown-item" href="{{ route('terminos_condiciones') }}">Términos y Condiciones</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('politica_datos') ? 'active' : '' }}" href="{{ route('politica_datos') }}">Pólitica tratamiento de datos</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('terminos_condiciones') ? 'active' : '' }}" href="{{ route('terminos_condiciones') }}">Términos y Condiciones</a></li>
                     </ul>
+                    
                 </li>
             </ul>
             <div class="d-flex">

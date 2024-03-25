@@ -12,4 +12,8 @@ class Producto extends Model
     protected $table = "productos";
 
     protected $guarded = [];
+
+    public function getRouteKeyName(){
+        return 'slug';
+    }
 }

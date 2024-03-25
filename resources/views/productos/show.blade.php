@@ -13,7 +13,7 @@
     <h1 class="mb-4">Producto {{$producto->nombre_producto}}</h1>
     <div class="row align-items-center mb-4">
         <div class="col-md-4">
-            <a class="btn btn-principal me-3 w-100" href="{{route('productos.edit', $producto->id)}}">Editar Producto</a>
+            <a class="btn btn-principal me-3 w-100" href="{{route('productos.edit', $producto)}}">Editar Producto</a>
         </div>
         <div class="col-md-4">
             <button type="button" class="btn btn-danger w-100 me-3" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">

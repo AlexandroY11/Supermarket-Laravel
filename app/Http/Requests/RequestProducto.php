@@ -24,10 +24,11 @@ class RequestProducto extends FormRequest
     {
         return [
             'nombre_producto' => 'required|min:3',
+            'slug' => 'required|unique:productos',
             'descripcion_producto' => 'required',
             'categoria' => 'required',
             'medida_producto' => 'required',
-            'precio' => 'required|min:6',
+            'precio' => 'required|numeric|min:10000',
             'stock' => 'required',
         ];
     }
@@ -36,10 +37,13 @@ class RequestProducto extends FormRequest
     {
         return [
             'nombre_producto' => 'El nombre del producto es obligatorio',
+            'slug.required' => 'El slug es obligatorio',
+            'slug.unique' => 'El slug ya existe en la base de datos',
             'descripcion_producto' => 'La descripción del producto es obligatorio',
             'categoria' => 'La categoría es obligatoria',
             'medida_producto' => 'La medida del producto es obligatoria',
-            'precio' => 'El precio es obligatorio',
+            'precio.required' => 'El precio es obligatorio',
+            'precio.min' => 'El precio debe ser mayor a $10000',
             'stock' => 'El stock es obligatorio'
         ];
     }

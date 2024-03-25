@@ -23,6 +23,13 @@
         @enderror
     </div>
     <div class="mb-3">
+        <label for="slug" class="form-label">Slug del Producto</label>
+        <input type="text" class="form-control" id="slug" name="slug" value="{{old('slug', $producto->slug)}}" >
+        @error('slug')
+            <span class="text-error">*{{ $message }}</span>
+        @enderror
+    </div>
+    <div class="mb-3">
         <label for="descripcion_producto" class="form-label">Descripción del Producto</label>
         <textarea class="form-control" id="descripcion_producto" name="descripcion_producto" rows="3" >{{old('descripcion_producto',$producto->descripcion_producto)}}</textarea>
         @error('descripcion_producto')
