@@ -14,7 +14,7 @@
             <div class="col-md-4">
                 <h5>Sobre Nosotros</h5>
                 <ul class="list-unstyled">
-                    <li><a href="{{ route('contactanos') }}">Contáctanos</a></li>
+                    <li><a href="{{ route('contactanos.index') }}">Contáctanos</a></li>
                     <li><a href="{{ route('preguntas_frecuentes') }}">Preguntas frecuentes</a></li>
                     <li><a href="{{ route('politica_datos') }}">Políticas de privacidad</a></li>
                     <li><a href="{{ route('terminos_condiciones') }}">Términos y Condiciones</a></li>

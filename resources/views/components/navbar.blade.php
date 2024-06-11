@@ -26,7 +26,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item {{ request()->routeIs('quienes_somos') ? 'active' : '' }}" href="{{ route('quienes_somos') }}">¿Quiénes Somos?</a></li>
                         <li><a class="dropdown-item {{ request()->routeIs('pqrs') ? 'active' : '' }}" href="{{ route('pqrs') }}">PQRS</a></li>
-                        <li><a class="dropdown-item {{ request()->routeIs('contactanos') ? 'active' : '' }}" href="{{ route('contactanos') }}">Contáctanos</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('contactanos.index') ? 'active' : '' }}" href="{{ route('contactanos.index') }}">Contáctanos</a></li>
                         <li><a class="dropdown-item {{ request()->routeIs('preguntas_frecuentes') ? 'active' : '' }}" href="{{ route('preguntas_frecuentes') }}">Preguntas Frecuentes</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item {{ request()->routeIs('politica_datos') ? 'active' : '' }}" href="{{ route('politica_datos') }}">Pólitica tratamiento de datos</a></li>

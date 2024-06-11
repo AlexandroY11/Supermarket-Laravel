@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function index(){
-        $categorias = Categoria::paginate();
+        $categorias = Categoria::all();
 
+        // return view('categorias.index', [$categorias => 'categorias']);
         return view('categorias.index', compact('categorias'));
     }
 

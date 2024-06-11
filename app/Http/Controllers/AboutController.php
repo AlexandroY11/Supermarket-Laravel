@@ -21,11 +21,6 @@ class AboutController extends Controller
         return view('sobre_nosotros.quienes_somos');
     }
 
-    public function contactanos()
-    {
-        return view('sobre_nosotros.contactanos');
-    }
-
     public function politicaDatos()
     {
         return view('sobre_nosotros.politica_datos');

@@ -34,7 +34,7 @@ class ProductController extends Controller
 
         $producto = Producto::create($request->all());
 
-        return redirect()->route('productos.show', $producto->id);
+        return redirect()->route('productos.show', $producto->slug)->with('success', 'Producto creado correctamente');
 
     } 
 
@@ -74,7 +74,7 @@ class ProductController extends Controller
 
         $producto->update($request->all());
 
-        return redirect()->route('productos.show', $producto);
+        return redirect()->route('productos.show', $producto)->with('success', 'Producto actualizado correctamente');
     }
 
     public function destroy(Producto $producto){
@@ -82,6 +82,7 @@ class ProductController extends Controller
 
         $producto->delete();
 
-        return redirect()->route('productos.index');
+        return redirect()->route('productos.index')->with('success', 'Producto eliminado correctamente');
+    
     }
 }

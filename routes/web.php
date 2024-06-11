@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactanosController;
 use App\Http\Controllers\UsuarioController;
 
 Route::get('/', HomeController::class, 'index')->name('home');
@@ -39,9 +40,11 @@ Route::controller(AboutController::class)->group(function(){
     Route::get('/sobre_nosotros/quienes_somos', 'quienesSomos')->name('quienes_somos');
     Route::get('/sobre_nosotros/pqrs', 'pqrs')->name('pqrs');
     Route::get('/sobre_nosotros/politica_datos', 'politicaDatos')->name('politica_datos');
-    Route::get('/sobre_nosotros/contactanos', 'contactanos')->name('contactanos');
     Route::get('/sobre_nosotros/preguntas_frecuentes', 'preguntasFrecuentes')->name('preguntas_frecuentes');
     Route::get('/sobre_nosotros/terminos_condiciones', 'terminosCondiciones')->name('terminos_condiciones');
 });
+
+Route::get('/contactanos', [ContactanosController::class, 'index'])->name('contactanos.index');
+Route::post('/contactanos', [ContactanosController::class, 'store'])->name('contactanos.store');
 
 Route::resource('productos', ProductController::class);
