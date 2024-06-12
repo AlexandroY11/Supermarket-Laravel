@@ -14,14 +14,14 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <a href="{{ route('productos.show', $producto->slug) }}">
-                            <h5 class="card-title">{{ $producto->nombre_producto }}</h5>
+                            <h5 class="card-title">{{ $producto->nombre }}</h5>
                         </a>
-                        <p class="card-text">{{ $producto->descripcion_producto }}</p>
+                        <p class="card-text">{{ $producto->descripcion }}</p>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">ID: {{ $producto->id }}</li>
                         <li class="list-group-item">Categoría: {{ $producto->categoria }}</li>
-                        <li class="list-group-item">Medida: {{ $producto->medida_producto }}</li>
+                        <li class="list-group-item">Medida: {{ $producto->medida }}</li>
                         <li class="list-group-item">Precio: {{ $producto->precio }}</li>
                         <li class="list-group-item">Stock: {{ $producto->stock }}</li>
                     </ul>

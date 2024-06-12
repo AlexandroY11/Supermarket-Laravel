@@ -10,7 +10,7 @@
     </a>
 </header>
 
-<h1 class="mb-4">Producto {{$producto->nombre_producto}}</h1>
+<h1 class="mb-4">Producto {{$producto->nombre}}</h1>
 <div class="row align-items-center mb-4">
     <div class="col-md-4">
         <a class="btn btn-principal me-3 w-100" href="{{ route('productos.edit', $producto->slug) }}">Editar Producto</a>
@@ -31,13 +31,13 @@
     <div class="col">
         <div class="card h-100">
             <div class="card-body">
-                <h5 class="card-title"><strong>{{ $producto->nombre_producto }}</strong></h5>
-                <p class="card-text">{{ $producto->descripcion_producto }}</p>
+                <h5 class="card-title"><strong>{{ $producto->nombre }}</strong></h5>
+                <p class="card-text">{{ $producto->descripcion }}</p>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><strong>ID:</strong> {{ $producto->id }}</li>
                 <li class="list-group-item"><strong>Categoría:</strong> {{ $producto->categoria }}</li>
-                <li class="list-group-item"><strong>Medida:</strong> {{ $producto->medida_producto }}</li>
+                <li class="list-group-item"><strong>Medida:</strong> {{ $producto->medida }}</li>
                 <li class="list-group-item"><strong>Precio:</strong> {{ $producto->precio }}</li>
                 <li class="list-group-item"><strong>Stock:</strong> {{ $producto->stock }}</li>
             </ul>

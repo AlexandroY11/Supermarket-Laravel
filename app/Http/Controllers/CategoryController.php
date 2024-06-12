@@ -28,15 +28,15 @@ class CategoryController extends Controller
     public function store(Request $request){
 
         $request->validate([
-            'nombre_categoria' => 'required|min:3',
-            'descripcion_categoria' => 'required',
+            'nombre' => 'required|min:3',
+            'descripcion' => 'required',
         ]);
 
         
         $categoria = new Categoria();
 
-        $categoria->nombre_categoria = $request->nombre_categoria;
-        $categoria->descripcion_categoria = $request->descripcion_categoria;
+        $categoria->nombre = $request->nombre;
+        $categoria->descripcion = $request->descripcion;
 
         $categoria->save();
 

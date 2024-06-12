@@ -17,8 +17,8 @@ class CategoriaFactory extends Factory
     public function definition(): array
     {
         return [
-            'nombre_categoria' => $this->faker->randomElement(['Edredones', 'Sabanas', 'Colchas', 'Cortinas', 'Toallas']), 
-            'descripcion_categoria' => $this->faker->sentence(10) 
+            'nombre' => $this->faker->randomElement(['Edredones', 'Sabanas', 'Colchas', 'Cortinas', 'Toallas']), 
+            'descripcion' => $this->faker->sentence(10) 
         ];
     }
 }

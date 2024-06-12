@@ -11,16 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('productos', function(Blueprint $table) {
+        Schema::create('productos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre_producto');
-            $table->string('slug')->unique();    
-            $table->text('descripcion_producto');
-            $table->string('medida_producto');
-            $table->string('categoria');
-            $table->decimal('precio', 10, 2); 
-            $table->integer('stock');        
+            $table->string('nombre');
+            $table->string('slug')->unique();
+            $table->text('descripcion');
+            $table->string('medida');
+            $table->unsignedBigInteger('categoria_id');
+            $table->decimal('precio', 10, 2);
+            $table->integer('stock');
             $table->timestamps();
+
+            $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
         });
         
     }

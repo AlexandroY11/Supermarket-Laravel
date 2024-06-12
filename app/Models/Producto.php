@@ -16,4 +16,24 @@ class Producto extends Model
     public function getRouteKeyName(){
         return 'slug';
     }
+
+    protected $fillable = [
+        'nombre',
+        'slug',
+        'descripcion',
+        'medida',
+        'categoria_id',
+        'precio',
+        'stock'
+    ];
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class, 'categoria_id');
+    }
+
+    public function imagenes()
+    {
+        return $this->hasMany(Imagen::class, 'producto_id');
+    }
 }

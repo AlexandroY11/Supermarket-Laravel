@@ -48,3 +48,4 @@ Route::get('/contactanos', [ContactanosController::class, 'index'])->name('conta
 Route::post('/contactanos', [ContactanosController::class, 'store'])->name('contactanos.store');
 
 Route::resource('productos', ProductController::class);
+Route::post('/productos/upload', [ProductController::class, 'upload'])->name('productos.upload');

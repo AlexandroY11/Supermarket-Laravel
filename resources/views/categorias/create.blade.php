@@ -15,16 +15,16 @@
 <form action="{{route('categorias.store')}}" method="POST">
     @csrf
     <div class="mb-3">
-        <label for="nombre_categoria" class="form-label">Nombre de la Categoría</label>
-        <input type="text" class="form-control" id="nombre_categoria" name="nombre_categoria" value="{{old('nombre_categoria')}}" >
-        @error('nombre_categoria')
+        <label for="nombre" class="form-label">Nombre de la Categoría</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" value="{{old('nombre')}}" >
+        @error('nombre')
             <span class="text-error">*{{ $message }}</span>
         @enderror
     </div>
     <div class="mb-3">
-        <label for="descripcion_categoria" class="form-label">Descripción de la Categoría</label>
-        <textarea class="form-control" id="descripcion_categoria" name="descripcion_categoria" rows="3" >{{old('descripcion_categoria')}}</textarea>
-        @error('descripcion_categoria')
+        <label for="descripcion" class="form-label">Descripción de la Categoría</label>
+        <textarea class="form-control" id="descripcion" name="descripcion" rows="3" >{{old('descripcion')}}</textarea>
+        @error('descripcion')
             <span class="text-error">*{{ $message }}</span>x
         @enderror
     </div>

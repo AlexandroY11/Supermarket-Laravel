@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Categoría || ' . $categoria->idcategoria)
+@section('title', 'Categoría || ' . $categoria->id)
 
 @section('body')
 <header>
@@ -10,10 +10,10 @@
     </a>
 </header>
 
-    <h1 class="mb-4">Categoría {{$categoria->nombre_categoria}}</h1>
+    <h1 class="mb-4">Categoría {{$categoria->nombre}}</h1>
     <div class="row align-items-center mb-4">
         <div class="col-md-4">
-            {{-- <a class="btn btn-principal me-3 w-100" href="{{route('categorias.edit', $categoria->idcategoria)}}">Editar Producto</a> --}}
+            {{-- <a class="btn btn-principal me-3 w-100" href="{{route('categorias.edit', $categoria->id)}}">Editar Producto</a> --}}
         </div>
         <div class="col-md-4">
             {{-- <button type="button" class="btn btn-danger w-100 me-3" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
@@ -31,7 +31,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                ¿Estás seguro de que deseas eliminar la categoría <strong>{{$categoria->nombre_categoria}}</strong>?
+                ¿Estás seguro de que deseas eliminar la categoría <strong>{{$categoria->nombre}}</strong>?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -51,8 +51,8 @@
         <div class="col">
             <div class="card h-100">
                 <div class="card-body">
-                    <h5 class="card-title"><strong>{{ $categoria->nombre_categoria }}</strong></h5>
-                    <p class="card-text">{{ $categoria->descripcion_categoria }}</p>
+                    <h5 class="card-title"><strong>{{ $categoria->nombre }}</strong></h5>
+                    <p class="card-text">{{ $categoria->descripcion }}</p>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><strong>ID:</strong> {{ $categoria->id }}</li>

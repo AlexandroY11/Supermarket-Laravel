@@ -2,82 +2,73 @@
 
 @section('title', 'Crear || Producto')
 
+@section('css')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css" integrity="sha512-jU/7UFiaW5UBGODEopEqnbIAHOI8fO6T99m7Tsmqs2gkdujByJfkCbbfPSN4Wlqlb9TGnsuC0YgUgWkRBK7B9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+@endsection
+
 @section('body')
-<header>
-    <a href="{{ route('productos.index') }}" style="text-decoration: none; display: flex; align-items: center; font-size:16px;">
-        <i class="fas fa-chevron-left"></i>
-        <span style="margin-left: 5px;">Regresar a Inicio</span>
-    </a>
-    
-</header>
+    <h1>Crear Producto</h1>
+    <form action="{{ route('productos.store') }}" method="POST" enctype="multipart/form-data" class="mt-4">
+        @csrf
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre del Producto</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="slug" class="form-label">Slug</label>
+            <input type="text" id="slug" name="slug" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <textarea id="descripcion" name="descripcion" class="form-control" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="medida" class="form-label">Medida</label>
+            <input type="text" id="medida" name="medida" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="categoria_id" class="form-label">Categoría</label>
+            <select id="categoria_id" name="categoria_id" class="form-select" required>
+                @foreach($categorias as $categoria)
+                    <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="precio" class="form-label">Precio</label>
+            <input type="text" id="precio" name="precio" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="stock" class="form-label">Stock</label>
+            <input type="number" id="stock" name="stock" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="dropzone" class="form-label">Imágenes del Producto</label>
+            <div id="dropzone" class="dropzone"></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Producto</button>
+    </form>
+@endsection
+@section('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js" integrity="sha512-U2WE1ktpMTuRBPoCFDzomoIorbOyUv0sP8B+INA3EzNAhehbzED1rOJg6bCqPf/Tuposxb5ja/MAUnC8THSbLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        Dropzone.autoDiscover = false;
 
-<h1 class="mt-5 mb-4">Crear Nuevo Producto</h1>
-<form action="{{route('productos.store')}}" method="POST">
-    @csrf
-    <div class="mb-3">
-        <label for="nombre_producto" class="form-label">Nombre del Producto</label>
-        <input type="text" class="form-control" id="nombre_producto" name="nombre_producto" value="{{old('nombre_producto')}}" >
-        @error('nombre_producto')
-            <span class="text-error">*{{ $message }}</span>
-        @enderror
-    </div>
-    <div class="mb-3">
-        <label for="slug" class="form-label">Slug del Producto</label>
-        <input type="text" class="form-control" id="slug" name="slug" value="{{old('slug')}}" >
-        @error('slug')
-            <span class="text-error">*{{ $message }}</span>
-        @enderror
-    </div>
-    <div class="mb-3">
-        <label for="descripcion_producto" class="form-label">Descripción del Producto</label>
-        <textarea class="form-control" id="descripcion_producto" name="descripcion_producto" rows="3" >{{old('descripcion_producto')}}</textarea>
-        @error('descripcion_producto')
-            <span class="text-error">*{{ $message }}</span>
-        @enderror
-    </div>
-    <div class="mb-3">
-        <label for="categoria" class="form-label">Categoría</label>
-        <select class="form-select" id="categoria" name="categoria">
-            <option selected disabled>Seleccionar categoría</option>
-            <option value="Edredones" {{ old('categoria') == 'Edredones' ? 'selected' : '' }}>Edredones</option>
-            <option value="Colchas" {{ old('categoria') == 'Colchas' ? 'selected' : '' }}>Colchas</option>
-            <option value="Sabanas" {{ old('categoria') == 'Sabanas' ? 'selected' : '' }}>Sabanas</option>
-            <option value="Cortinas" {{ old('categoria') == 'Cortinas' ? 'selected' : '' }}>Cortinas</option>
-            <option value="Toallas" {{ old('categoria') == 'Toallas' ? 'selected' : '' }}>Toallas</option>
-        </select>
-        @error('categoria')
-            <span class="text-error">*{{ $message }}</span>
-        @enderror
-    </div>
-    <div class="mb-3">
-        <label for="medida_producto" class="form-label">Medida del Producto</label>
-        <select class="form-select" id="medida_producto" name="medida_producto">
-            <option selected disabled>Seleccionar Medida</option>
-            <option value="King" {{ old('medida_producto') == 'King' ? 'selected' : '' }}>King</option>
-            <option value="Queen" {{ old('medida_producto') == 'Queen' ? 'selected' : '' }}>Queen</option>
-            <option value="Doble" {{ old('medida_producto') == 'Doble' ? 'selected' : '' }}>Doble</option>
-            <option value="Semidoble" {{ old('medida_producto') == 'Semidoble' ? 'selected' : '' }}>Semidoble</option>
-        </select>
-        @error('medida_producto')
-            <span class="text-error">*{{ $message }}</span>
-        @enderror
-    </div>
-    
-    <div class="mb-3">
-        <label for="precio" class="form-label">Precio</label>
-        <input type="number" class="form-control" id="precio" name="precio" value="{{old('precio')}}">
-        @error('precio')
-            <span class="text-error">*{{ $message }}</span>
-        @enderror
-    </div>
-    <div class="mb-3">
-        <label for="stock" class="form-label">Stock</label>
-        <input type="number" class="form-control" id="stock" name="stock" value="{{old('stock')}}" >
-        @error('stock')
-            <span class="text-error">*{{ $message }}</span>
-        @enderror
-    </div>
-    <button type="submit" class="btn btn-principal">Crear Producto</button>
-</form>
+        var uploadedImages = [];
 
+        var myDropzone = new Dropzone("#dropzone", {
+            url: "{{ route('productos.upload') }}",
+            headers: {
+                'X-CSRF-TOKEN': "{{ csrf_token() }}"
+            },
+            success: function(file, response) {
+                uploadedImages.push(response.ruta_imagen);
+                var hiddenInput = document.createElement('input');
+                hiddenInput.setAttribute('type', 'hidden');
+                hiddenInput.setAttribute('name', 'imagenes[]');
+                hiddenInput.setAttribute('value', response.ruta_imagen);
+                document.querySelector('form').appendChild(hiddenInput);
+            }
+        });
+    </script>
 @endsection

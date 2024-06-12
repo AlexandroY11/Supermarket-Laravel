@@ -16,9 +16,9 @@
     @csrf
     @method('put')
     <div class="mb-3">
-        <label for="nombre_producto" class="form-label">Nombre del Producto</label>
-        <input type="text" class="form-control" id="nombre_producto" name="nombre_producto" value="{{old('nombre_producto',$producto->nombre_producto)}}" >
-        @error('nombre_producto')
+        <label for="nombre" class="form-label">Nombre del Producto</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" value="{{old('nombre',$producto->nombre)}}" >
+        @error('nombre')
             <span class="text-error">*{{ $message }}</span>
         @enderror
     </div>
@@ -30,9 +30,9 @@
         @enderror
     </div>
     <div class="mb-3">
-        <label for="descripcion_producto" class="form-label">Descripción del Producto</label>
-        <textarea class="form-control" id="descripcion_producto" name="descripcion_producto" rows="3" >{{old('descripcion_producto',$producto->descripcion_producto)}}</textarea>
-        @error('descripcion_producto')
+        <label for="descripcion" class="form-label">Descripción del Producto</label>
+        <textarea class="form-control" id="descripcion" name="descripcion" rows="3" >{{old('descripcion',$producto->descripcion)}}</textarea>
+        @error('descripcion')
             <span class="text-error">*{{ $message }}</span>
         @enderror
     </div>
@@ -52,15 +52,15 @@
     </div>
     
     <div class="mb-3">
-        <label for="medida_producto" class="form-label">Medida del Producto</label>
-        <select class="form-select" id="medida_producto" name="medida_producto" >
+        <label for="medida" class="form-label">Medida del Producto</label>
+        <select class="form-select" id="medida" name="medida" >
             <option disabled>Seleccionar Medida</option>
-            <option value="King" {{ old('medida_producto', $producto->medida_producto) === 'King' ? 'selected' : '' }}>King</option>
-            <option value="Queen" {{ old('medida_producto', $producto->medida_producto) === 'Queen' ? 'selected' : '' }}>Queen</option>
-            <option value="Doble" {{ old('medida_producto', $producto->medida_producto) === 'Doble' ? 'selected' : '' }}>Doble</option>
-            <option value="Semidoble" {{ old('medida_producto', $producto->medida_producto) === 'Semidoble' ? 'selected' : '' }}>Semidoble</option>
+            <option value="King" {{ old('medida', $producto->medida) === 'King' ? 'selected' : '' }}>King</option>
+            <option value="Queen" {{ old('medida', $producto->medida) === 'Queen' ? 'selected' : '' }}>Queen</option>
+            <option value="Doble" {{ old('medida', $producto->medida) === 'Doble' ? 'selected' : '' }}>Doble</option>
+            <option value="Semidoble" {{ old('medida', $producto->medida) === 'Semidoble' ? 'selected' : '' }}>Semidoble</option>
         </select>
-        @error('medida_producto')
+        @error('medida')
             <span class="text-error">*{{ $message }}</span>
         @enderror
     </div>

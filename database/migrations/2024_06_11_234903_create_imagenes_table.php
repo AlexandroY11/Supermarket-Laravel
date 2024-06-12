@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('proveedores', function (Blueprint $table) {
-            $table->id('id_proveedor');
-            $table->string('nombre_proveedor');
-            $table->string('email_proveedor')->nullable();
-            $table->string('telefono_proveedor')->nullable();
-            $table->string('direccion_proveedor')->nullable();
+        Schema::create('imagenes', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('producto_id');
+            $table->string('ruta_imagen');
             $table->timestamps();
+
+            $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade');
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('proveedores');
+        Schema::dropIfExists('imagenes');
     }
 };

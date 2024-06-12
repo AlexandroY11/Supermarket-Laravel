@@ -62,7 +62,7 @@
                         <select type="producto" class="form-select @error('producto') is-invalid @enderror" id="producto" name="producto" placeholder="Producto de interés" required>
                             <option value="" selected disabled>Elegir opción...</option>
                             @foreach ($productos as $producto)
-                                <option value="{{ $producto->nombre_producto }}" {{ old('producto') == $producto->nombre_producto ? 'selected' : '' }}>{{ $producto->nombre_producto }}</option>
+                                <option value="{{ $producto->nombre }}" {{ old('producto') == $producto->nombre ? 'selected' : '' }}>{{ $producto->nombre }}</option>
                             @endforeach
                         </select>
                         @error('producto')

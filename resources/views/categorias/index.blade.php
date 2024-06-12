@@ -14,9 +14,9 @@
             <div class="card h-100">
                 <div class="card-body">
                     <a href="{{route('categorias.show', $categoria->id)}}">
-                        <h5 class="card-title">{{ $categoria->nombre_categoria }}</h5>
+                        <h5 class="card-title">{{ $categoria->nombre }}</h5>
                     </a>
-                    <p class="card-text">{{ $categoria->descripcion_categoria }}</p>
+                    <p class="card-text">{{ $categoria->descripcion }}</p>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: {{ $categoria->id }}</li>
